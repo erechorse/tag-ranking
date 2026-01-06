@@ -36,6 +36,8 @@
 		}
 	}
 
+	let serialBuffer = '';
+
 	async function readLoop() {
 		if (!reader) return;
 		try {
@@ -46,12 +48,18 @@
 					break;
 				}
 				if (value) {
-					// Assuming the device sends the duration in ms as a line
-					// Simple parsing logic (can be improved)
-					const trimmed = value.trim();
-					if (trimmed && !isNaN(Number(trimmed))) {
-						durationInput = trimmed;
-						// Optional: Auto-submit here
+					serialBuffer += value;
+					const lines = serialBuffer.split('\n');
+					// The last element is either an empty string (if the last char was \n)
+					// or an incomplete line. We keep it in the buffer.
+					serialBuffer = lines.pop() ?? '';
+
+					for (const line of lines) {
+						const trimmed = line.trim();
+						if (trimmed && !isNaN(Number(trimmed))) {
+							durationInput = trimmed;
+							// Optional: Auto-submit here if needed
+						}
 					}
 				}
 			}
