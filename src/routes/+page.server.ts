@@ -12,7 +12,7 @@ export const load: PageServerLoad = async ({ locals: { supabase } }) => {
 			)
 		`)
         .not('player_id', 'is', null)
-        .order('duration_ms', { ascending: true }) // Fastest time first is usually clearer for "Speed" but wait. 
+        .order('duration_ms', { ascending: false }) // Modified to descending order: Longer time is better (higher rank) 
         // User said: "勝ちまでの時間を競う" (Compete for time until win). shorter is better?
         // Usually "tag" implies surviving longer, but "鬼役が追いついて...勝ちまでの時間を競う"
         // If the 'Human' is controlling the 'Oni' (Catcher), and competing for time to catch.
