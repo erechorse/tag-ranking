@@ -45,7 +45,7 @@ export const actions: Actions = {
         const formData = await request.formData();
         const token = formData.get('token') as string;
         const nickname = formData.get('nickname') as string;
-        const contact = formData.get('contact') as string;
+
 
         if (!token || !nickname) {
             return fail(400, { error: 'Nickname is required' });
@@ -55,7 +55,7 @@ export const actions: Actions = {
         const { data, error } = await supabase.rpc('claim_match', {
             p_session_token: token,
             p_nickname: nickname,
-            p_contact_info: contact || null
+            p_contact_info: null
         });
 
         if (error) {

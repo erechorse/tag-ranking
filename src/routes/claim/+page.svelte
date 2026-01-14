@@ -84,22 +84,7 @@
 						/>
 					</div>
 
-					<div>
-						<label
-							for="contact"
-							class="mb-2 block text-sm font-bold tracking-wide text-gray-500 uppercase"
-						>
-							Contact Info (Optional)
-						</label>
-						<input
-							type="text"
-							name="contact"
-							id="contact"
-							placeholder="Email / Twitter"
-							class="w-full rounded-lg border border-gray-800 bg-black/50 px-4 py-3 text-base text-gray-400 transition-all focus:border-purple-500 focus:outline-none"
-						/>
-						<p class="mt-1 text-xs text-gray-600">For winner notification only.</p>
-					</div>
+
 
 					<button
 						type="submit"
