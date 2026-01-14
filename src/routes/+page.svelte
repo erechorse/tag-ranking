@@ -62,14 +62,12 @@
 			class="pointer-events-none absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-900/30 blur-[100px]"
 		></div>
 
-		<h1
-			class="relative z-10 mb-4 text-5xl font-black tracking-tighter uppercase italic md:text-7xl"
-		>
-			<span class="bg-gradient-to-br from-white to-gray-500 bg-clip-text text-transparent">Tag</span
+		<h1 class="relative z-10 mb-4 text-5xl font-black tracking-tighter md:text-7xl">
+			<span class="bg-gradient-to-br from-white to-gray-500 bg-clip-text text-transparent"
+				>RoboChase</span
 			>
-			<span class="text-cyan-400">Master</span>
+			<span class="text-cyan-400">Leaderboard</span>
 		</h1>
-		<p class="relative z-10 text-lg tracking-widest text-gray-400 uppercase">Speed Ranking</p>
 	</header>
 
 	<!-- Leaderboard Table -->
